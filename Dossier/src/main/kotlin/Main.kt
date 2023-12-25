@@ -50,17 +50,14 @@ private fun delete()
     println("Удалить досье")
     println("Введите ФИО: ")
     val f = readln()
-    println("Введите должность: ")
-    val p = readln()
-    if(f.toIntOrNull() == null && p.toIntOrNull() == null) {
-
-        post.remove(p)
+    if(f.toIntOrNull() == null) {
+        val i = FIO.indexOf(f)
+        post.removeAt(i)
         FIO.remove(f)
     }
     else{
         println("Ваш ответ некорректен")
     }
-
 }
 private fun search()
 {
